@@ -6,7 +6,19 @@
 - frontend: Here is the frontend in React
 
 ## How run locally
-TODO
+This project use [truffle](https://www.trufflesuite.com) for easy deploy.
+
+### Command for compiling:
+
+    truffle compile
+
+### Command for deploy
+
+    truffle migrate
+
+### Running the tests
+
+    truffle test
 
 ## How deploy
 TODO

@@ -1,4 +1,4 @@
-pragma solidity >=0.8.9;
+pragma solidity >=0.5.16;
 
 contract Chat {
     // event when a user write a new message
@@ -18,7 +18,7 @@ contract Chat {
     // given the address, return how messages has written
     mapping(address => uint) ownerMessageCount;
 
-    function addMessage(string _message) public {
+    function addMessage(string memory _message) public {
         uint id = messages.push(Message(_message, msg.sender));
         messageToOwner[id] = msg.sender;
         ownerMessageCount[msg.sender]++;
