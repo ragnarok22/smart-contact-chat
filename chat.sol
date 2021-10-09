@@ -2,11 +2,10 @@ pragma solidity >=0.8.9;
 
 contract Chat {
     // event when a user write a new message
-    event newMessage(string message, address owner);
+    event newMessage(uint id, string message, address owner);
 
     // Message object
     struct Message {
-        uint id;
         string message;
         address owner;
     }
@@ -18,4 +17,11 @@ contract Chat {
     mapping(uint => address) public messageToOwner;
     // given the address, return how messages has written
     mapping(address => uint) ownerMessageCount;
+
+    function addMessage(string _message) public {
+        uint id = messages.push(Message(_message, msg.sender));
+        messageToOwner[id] = msg.sender;
+        ownerMessageCount[msg.sender]++;
+        emit newMessage(id, _message, msg.sender);
+    }
 }
