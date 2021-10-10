@@ -20,7 +20,8 @@ contract Chat {
     mapping(address => uint) ownerMessageCount;
 
     function addMessage(string memory _message) public {
-        uint id = messages.push(Message(_message, msg.sender));
+        uint id = messages.length;
+        messages.push(Message(_message, msg.sender));
         messageToOwner[id] = msg.sender;
         ownerMessageCount[msg.sender]++;
         emit newMessage(id, _message, msg.sender);
