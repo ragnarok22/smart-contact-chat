@@ -1,4 +1,5 @@
-pragma solidity >=0.5.16;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.8.7;
 
 contract Chat {
     // event when a user write a new message
@@ -23,5 +24,9 @@ contract Chat {
         messageToOwner[id] = msg.sender;
         ownerMessageCount[msg.sender]++;
         emit newMessage(id, _message, msg.sender);
+    }
+
+    function getAllMessages() public view returns(Message[] memory) {
+        return messages;
     }
 }

@@ -2,7 +2,7 @@ import './Login.css';
 import { useEffect, useState } from 'react';
 import getWeb3 from './getWeb3';
 import ChatContract from './contracts/Chat.json'
-import { Link } from 'react-router-dom';
+import { Chat } from './Chat';
 
 export default function Login() {
   const [loading, setLoading] = useState(false);
@@ -48,14 +48,18 @@ export default function Login() {
     connect();
   }, []);
 
+  if (contract) {
+    return (
+      <Chat web3={web3} accounts={accounts} contract={contract} />
+    )
+  }
+
   return (
     <div className="login">
       <h1>Bienvenidos al chat decentralizado</h1>
       <p>
         {accounts ? `Wallet conectada ${accounts[0]}` : 'Loading'}
       </p>
-      <Link to="/chat">Go to chat</Link>
-      
     </div>
   )
 }

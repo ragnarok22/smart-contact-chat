@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
 import { ChatList } from "./ChatList";
 
-export const Chat = () => {
+export const Chat = ({ web3, accounts, contract}) => {
   const [loading, setLoading] = useState(true);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    setMessages([{
-      address: 'asdfasdf',
-      message: 'hola mundo'
-    }])
+    (async () => {
+      const response = await contract.methods.getAllMessages().call();
+      setMessages(response);
+    })()
     setLoading(false);
 
   }, []);
