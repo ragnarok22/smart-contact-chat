@@ -7,3 +7,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+.message.own {
+  margin-left: auto;
+  border-radius: 20px 0 0 20px;
+  background: rgb(149, 255, 149);
+  flex-direction: row-reverse;
+}

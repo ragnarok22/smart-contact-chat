@@ -1,11 +1,16 @@
 import { Message } from "./Message"
 
-export const ChatList = ({ messages }) => {
+export const ChatList = ({ account, messages }) => {
   return (
     <div>
       {
         messages.map((message, i) => (
-          <Message owner={message.owner} message={message.message} />
+          <Message
+            key={i}
+            owner={message.owner}
+            message={message.message}
+            isOwn={message.owner === account}
+          />
         ))
       }
     </div>

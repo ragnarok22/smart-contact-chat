@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ChatList } from "./ChatList";
 import "./Chat.css";
 
-export const Chat = ({ web3, accounts, contract }) => {
+export const Chat = ({ accounts, contract }) => {
   const [loading, setLoading] = useState(true);
   const [messages, setMessages] = useState([]);
 
@@ -51,7 +51,7 @@ export const Chat = ({ web3, accounts, contract }) => {
     <div className="chat">
       <h1>Chat room</h1>
       <div className="chatroom">
-        <ChatList messages={messages} />
+        <ChatList account={accounts[0]} messages={messages} />
         <form onSubmit={onSubmit}>
           <input type="text" placeholder="message..." />
         </form>

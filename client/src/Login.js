@@ -46,7 +46,7 @@ export default function Login() {
 
   if (contract) {
     return (
-      <Chat web3={web3} accounts={accounts} contract={contract} />
+      <Chat accounts={accounts} contract={contract} />
     )
   }
 
