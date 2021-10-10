@@ -3,7 +3,7 @@ export const ChatList = ({ messages }) => {
     <div>
       {
         messages.map((message, i) => (
-          <p key={i}>{message.address} {message.message}</p>
+          <p key={i}>{message.owner} {message.message}</p>
         ))
       }
     </div>
