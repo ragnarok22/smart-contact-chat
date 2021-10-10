@@ -1,22 +1,22 @@
 # Smart contact chat
-> Another chat but in a blockchain!
+> Another public chat but in a blockchain!
 
 ## Folder structure:
-- contract: here you can find all contracts write in Solidity 0.8.9
-- frontend: Here is the frontend in React
+- `contracts`: here you can find all contracts write in Solidity 0.5.16
+- `client`: Here is the frontend in React
 
 ## How run locally
 This project use [truffle](https://www.trufflesuite.com) for easy deploy.
 
-### Command for compiling:
+### Command for compiling smart contract:
 
     truffle compile
 
-### Command for deploy
+### Command for deploy smart contract
 
     truffle migrate
 
-### Running the tests
+### Running the smart contract tests
 
     truffle test
 
