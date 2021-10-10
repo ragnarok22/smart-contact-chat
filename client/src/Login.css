@@ -11,8 +11,11 @@
   padding-top: 4rem;
 }
 
-.login button {
+.login p {
   padding: .5rem;
-  max-width: 10rem;
   margin-top: 5rem;
+}
+
+.login a {
+  color: whitesmoke;
 }
