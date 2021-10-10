@@ -1,0 +1,33 @@
+.chat {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat h1 {
+  margin: 1.5rem 0;
+}
+
+.chat .chatroom {
+  background-color: gainsboro;
+  border-radius: 10px 10px 0 0;
+  color: darkslategrey;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  height: 100%;
+}
+
+.chat .chatroom form {
+  margin-top: auto;
+  margin-bottom: .5rem;
+  width: 100%;
+}
+
+.chat .chatroom form input {
+  width: calc(100% - 2rem);
+  padding: .5rem 1rem;
+}

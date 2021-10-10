@@ -1,0 +1,9 @@
+.message {
+  padding: .5rem;
+  background: white;
+  margin: .5rem 0;
+  max-width: 80%;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+}

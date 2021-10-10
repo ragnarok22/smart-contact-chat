@@ -14,15 +14,12 @@ export default function Login() {
     setLoading(true);
     try {
       // get network provider and web3 instance.
-      console.log('paso 1')
       const web3 = await getWeb3();
 
       // use web3to get the user's accounts
-      console.log('paso 2')
       const accounts = await web3.eth.getAccounts();
 
       //get the contract instance
-      console.log('paso 3')
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = ChatContract.networks[networkId];
       const instance = new web3.eth.Contract(
@@ -40,7 +37,6 @@ export default function Login() {
       );
       console.error(error);
     }
-    
     setLoading(false);
   }
 
