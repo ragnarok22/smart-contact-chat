@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Chat } from "./Chat";
-import Login from "./Login";
-import { NotFound } from "./NotFound";
+import { Chat } from "./components/Chat";
+import Login from "./components/Login";
+import { NotFound } from "./components/NotFound";
 
 export const Routes = () => (
   <BrowserRouter>

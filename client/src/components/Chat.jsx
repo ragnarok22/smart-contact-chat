@@ -4,6 +4,7 @@ import "./Chat.css";
 
 export const Chat = ({ accounts, contract }) => {
   const [loading, setLoading] = useState(true);
+  const [sending, setSending] = useState(false);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
@@ -33,10 +34,16 @@ export const Chat = ({ accounts, contract }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setSending(true);
+    alert('Por favor acepte la transacción en su MetaMask');
+    e.target.firstChild.disabled = true;
     const text = e.target.firstChild.value;
     console.log("enviando " + text);
     await contract.methods.addMessage(text).send({ from: accounts[0] });
     console.log("mensaje enviado");
+    e.target.firstChild.value = '';
+    e.target.firstChild.disabled = false;
+    setSending(false);
   };
 
   if (loading) {

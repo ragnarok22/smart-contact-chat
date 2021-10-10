@@ -1,7 +1,7 @@
 import './Login.css';
 import { useEffect, useState } from 'react';
-import getWeb3 from './getWeb3';
-import ChatContract from './contracts/Chat.json'
+import getWeb3 from '../getWeb3';
+import ChatContract from '../contracts/Chat.json'
 import { Chat } from './Chat';
 
 export default function Login() {
